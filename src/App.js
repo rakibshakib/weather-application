@@ -4,6 +4,8 @@ import Axios from "axios";
 import { config } from "./config";
 import { useEffect, useState } from "react";
 import useAxiosHooks from "./hooks/useAxiosHooks";
+import Forecast from "./components/Forecast";
+import WeatherConditions from "./components/WeatherConditions";
 
 const APIUrl = `https://api.openweathermap.org`;
 Axios.defaults.baseURL = APIUrl;
@@ -27,7 +29,7 @@ function App() {
     });
   };
   useEffect(() => {
-    getWeatherFn();
+    // getWeatherFn();
   }, []);
   return (
     <div className="App">
@@ -40,6 +42,10 @@ function App() {
           }}
         />
         <CurrentCityWeather propsObj={{ currentWeather }} />
+        <div className="grid grid-cols-2">
+          <WeatherConditions />
+          <Forecast />
+        </div>
       </div>
     </div>
   );
