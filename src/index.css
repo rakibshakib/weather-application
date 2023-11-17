@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap");
+
+.App {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 10px auto;
+  font-family: "Montserrat", sans-serif;
+}
