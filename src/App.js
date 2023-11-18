@@ -17,7 +17,7 @@ function App() {
     e.preventDefault();
     getWeatherFn(cityName);
   };
-  const [currentWeather, getCurrentWeather, loadingCurrentWeather] =
+  const [currentWeather, getCurrentWeather, loadingCurrentWeather, , error] =
     useAxiosHooks({});
   const getWeatherFn = (city = "Dhaka") => {
     getCurrentWeather({
@@ -30,6 +30,7 @@ function App() {
   };
   useEffect(() => {
     getWeatherFn();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="App">
@@ -46,15 +47,21 @@ function App() {
           <Loading />
         ) : (
           <>
-            <CurrentCityWeather propsObj={{ currentWeather }} />
-            <div className="grid grid-cols-12 gap-4 mt-5">
-              <div className="lg:col-span-3 xl:col-span-3 sm:col-span-12 md:col-span-12 col-span-12">
-                <WeatherConditions currentWeather={currentWeather} />
-              </div>
-              <div className="lg:col-span-9 xl:col-span-9 sm:col-span-12 md:col-span-12 col-span-12">
-                <Forecast cityName={finalCity} />
-              </div>
-            </div>
+            <CurrentCityWeather propsObj={{ currentWeather, error }} />
+            {error ? (
+              <></>
+            ) : (
+              <>
+                <div className="grid grid-cols-12 gap-4 mt-5">
+                  <div className="lg:col-span-3 xl:col-span-3 sm:col-span-12 md:col-span-12 col-span-12">
+                    <WeatherConditions currentWeather={currentWeather} />
+                  </div>
+                  <div className="lg:col-span-9 xl:col-span-9 sm:col-span-12 md:col-span-12 col-span-12">
+                    <Forecast cityName={finalCity} />
+                  </div>
+                </div>
+              </>
+            )}
           </>
         )}
       </div>
