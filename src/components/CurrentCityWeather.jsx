@@ -16,15 +16,18 @@ const CurrentCityWeather = ({ propsObj }) => {
       <div className="flex justify-between items-center">
         <div className="text-3xl font-semibold">
           <p>
+          <img src={`http://openweathermap.org/img/w/${currentWeather?.weather?.[0]?.icon}.png`} alt="openweathermap" />
+
+          </p>
+          <p>
             {Math.round(currentWeather?.main?.temp)}
             <span>&#176; C</span>
           </p>
-          <p>
-            {/* Feel Like: {Math.round(currentWeather?.main?.feels_like)}
-            <span>&#176; C</span> */}
+          {/* <p>
+         
             humidity: {currentWeather?.main?.humidity} %
           </p>
-          <p>wind speed: {Math.round(currentWeather?.wind?.speed || 1) * 3.6} km/h</p>
+          <p>wind speed: {Math.round(currentWeather?.wind?.speed || 1) * 3.6} km/h</p> */}
           <p> {currentWeather?.name}</p>
         </div>
         <div>
