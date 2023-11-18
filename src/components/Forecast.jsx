@@ -59,12 +59,12 @@ const Forecast = ({ cityName }) => {
               )}
 
               <h2>{day?.substring(0, 3)?.toUpperCase()}</h2>
-              <p className="font-semibold">
+              <p className="font-semibold text-[12px]">
                 {" "}
                 Max: {Math.round(dayWiseReport[day]?.[0]?.main?.temp_max)}
                 <span>&#176; C</span>
               </p>
-              <p className="font-semibold">
+              <p className="font-semibold text-[12px]">
                 {" "}
                 Min:{" "}
                 {Math.round(

@@ -33,7 +33,8 @@ const CurrentCityWeather = ({ propsObj }) => {
           <p className="text-xl">
             {getTimeFromUnixTime(currentWeather?.sys?.sunset)}
           </p>
-          <p>Sunset Time, {getFullDay(currentWeather?.sys?.sunset)?.dayName}</p>
+          <p className="text-[12px] pb-2">Sunset Time</p>
+          <p>Today: {getFullDay(currentWeather?.sys?.sunset)?.dayName}</p>
         </div>
       </div>
     </div>

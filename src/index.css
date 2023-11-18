@@ -9,7 +9,7 @@ body {
 .App {
   display: flex;
   justify-content: center;
-  width: 60%;
+  width: 50%;
   margin: 10px auto;
   font-family: "Montserrat", sans-serif;
 }

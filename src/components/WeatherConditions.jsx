@@ -7,8 +7,8 @@ import { getTimeFromUnixTime } from "../utills";
 const WeatherConditions = ({ currentWeather }) => {
   return (
     <div className="h-full">
-      <div className="px-8 border flex flex-col justify-around items-start py-3 h-full">
-        <div className="flex items-center border-b-2 pb-3 w-full">
+      <div className="px-8 border flex md:flex-col lg:flex-col xl:flex-col flex-row justify-around items-start py-3 h-full">
+        <div className="flex items-center border-b-2 pb-3 w-full md:h-full h-[100px]">
           <figure className="w-[30px]">
             <img className="w-full" src={humidityIcon} alt="" />
           </figure>
@@ -17,7 +17,7 @@ const WeatherConditions = ({ currentWeather }) => {
             <p className="font-semibold">{currentWeather?.main?.humidity} %</p>
           </div>
         </div>
-        <div className="flex items-center border-b-2 pb-3 w-full">
+        <div className="flex items-center border-b-2 pb-3 w-full md:h-full h-[100px]">
           <figure className="w-[30px]">
             <img className="w-full" src={wind} alt="" />
           </figure>
@@ -28,7 +28,7 @@ const WeatherConditions = ({ currentWeather }) => {
             </p>
           </div>
         </div>
-        <div className="flex items-center border-b-2 pb-3 w-full">
+        <div className="flex items-center border-b-2 pb-3 w-full md:h-full h-[100px]">
           <figure className="w-[30px]">
             <img className="w-full" src={sunrise} alt="" />
           </figure>
@@ -39,7 +39,7 @@ const WeatherConditions = ({ currentWeather }) => {
             </p>
           </div>
         </div>
-        <div className="flex items-center border-b-2 pb-3 w-full">
+        <div className="flex items-center border-b-2 pb-3 w-full md:h-full h-[100px]">
           <figure className="w-[30px]">
             <img className="w-full" src={sunset} alt="" />
           </figure>
