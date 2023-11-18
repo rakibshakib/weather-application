@@ -1,6 +1,5 @@
-import axios from 'axios';
 export const config = {
-  accessKey: process.env.REACT_APP_ACCESSKEY,
+  accessKey: "977172783f3d505573e93e6d099680c1",
 };
 
 // axiosConfig.js
