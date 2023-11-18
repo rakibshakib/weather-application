@@ -35,7 +35,7 @@ const Forecast = ({ cityName }) => {
       ) : (
         <>
           <div className="chartSection">
-            <div className="rounded-md my-2">
+            <div className="rounded-md my-2 ">
               {currentDayData?.labels?.length > 0 ? (
                 <LineChart dayData={currentDayData} />
               ) : (
@@ -44,7 +44,7 @@ const Forecast = ({ cityName }) => {
             </div>
           </div>
           <div className="dayList my-3">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center lg:flex-wrap  md:flex-wrap  xl:flex-nowrap flex-wrap lg:flex-no-wrap ">
               {weekDayList.map((day) => (
                 <div
                   onClick={() => {
@@ -52,7 +52,7 @@ const Forecast = ({ cityName }) => {
                     handleLineChartData(dayWiseReport[day], setCurrentDayData);
                   }}
                   key={day}
-                  className={`text-sm flex flex-col items-center cursor-pointer px-5 py-2 rounded-md hover:ring-1 ring-purple-300 ${
+                  className={`xl:w-auto lg:w-auto w-[100%]  text-sm flex flex-col items-center cursor-pointer px-5 py-2 rounded-md hover:ring-1 ring-purple-300 ${
                     currentDayData?.day === dayWiseReport[day]?.[0].day_txt
                       ? "bg-purple-300 rounded-md"
                       : ""

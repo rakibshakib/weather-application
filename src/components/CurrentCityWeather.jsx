@@ -18,9 +18,9 @@ const CurrentCityWeather = ({ propsObj }) => {
           <p className="text-[10px]">Message: {error}</p>
         </div>
       ) : (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center xl:flex-row lg:flex-row md:flex-col flex-col">
           <div className="flex font-semibold mt-1">
-            <p className="bg-white w-[100px] rounded-lg">
+            <p className="bg-white xl:w-[100px] lg:w-[100px] w-[50px]  rounded-lg">
               <img
                 src={`http://openweathermap.org/img/w/${currentWeather?.weather?.[0]?.icon}.png`}
                 alt="openweathermap"
@@ -28,17 +28,17 @@ const CurrentCityWeather = ({ propsObj }) => {
               />
             </p>
             <div className="ml-4">
-              <p className="text-5xl">
+              <p className="xl:text-5xl lg:text-4xl text-xl">
                 <span>{Math.round(currentWeather?.main?.temp)}</span>
                 <span>&#176; C</span>
               </p>
-              <p className="text-xl mt-3">
+              <p className="lg:text-xl md:text-xl text-base mt-3">
                 {currentWeather?.name}, {currentWeather?.sys?.country}
               </p>
             </div>
           </div>
-          <div className="text-end">
-            <p className="text-xl">
+          <div className="lg:text-end xl:text-end text-center ">
+            <p className="text-xl py-2">
               {getTimeFromUnixTime(currentWeather?.sys?.sunset)}
             </p>
             <p className="text-[12px] pb-2">Sunset Time</p>
