@@ -24,11 +24,15 @@ const CurrentCityWeather = ({ propsObj }) => {
               <span>{Math.round(currentWeather?.main?.temp)}</span>
               <span>&#176; C</span>
             </p>
-            <p className="text-xl mt-3">{currentWeather?.name}</p>
+            <p className="text-xl mt-3">
+              {currentWeather?.name}, {currentWeather?.sys?.country}
+            </p>
           </div>
         </div>
         <div className="text-end">
-          <p className="text-xl">{getTimeFromUnixTime(currentWeather?.sys?.sunset)}</p>
+          <p className="text-xl">
+            {getTimeFromUnixTime(currentWeather?.sys?.sunset)}
+          </p>
           <p>Sunset Time, {getFullDay(currentWeather?.sys?.sunset)?.dayName}</p>
         </div>
       </div>
