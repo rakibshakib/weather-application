@@ -3,6 +3,7 @@ import { getFullDay, getTimeFromUnixTime } from "../utills";
 
 const CurrentCityWeather = ({ propsObj }) => {
   const { currentWeather } = propsObj || {};
+  // console.log("CurrentCityWeather component rendering.. ");
   return (
     <div
       className="border rounded-md h-[200px] p-3 mt-5 text-white"
@@ -41,4 +42,5 @@ const CurrentCityWeather = ({ propsObj }) => {
   );
 };
 
-export default CurrentCityWeather;
+// export default CurrentCityWeather;
+export default React.memo(CurrentCityWeather);

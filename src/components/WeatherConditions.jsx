@@ -5,6 +5,7 @@ import sunrise from "../asset/images/sunrise.png";
 import wind from "../asset/images/wind.png";
 import { getTimeFromUnixTime } from "../utills";
 const WeatherConditions = ({ currentWeather }) => {
+  // console.log("WeatherConditions component rendering....");
   return (
     <div className="h-full">
       <div className="px-8 border flex md:flex-col lg:flex-col xl:flex-col flex-row justify-around items-start py-3 h-full">
@@ -55,4 +56,4 @@ const WeatherConditions = ({ currentWeather }) => {
   );
 };
 
-export default WeatherConditions;
+export default React.memo(WeatherConditions);

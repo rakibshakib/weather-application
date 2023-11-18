@@ -9,7 +9,7 @@ const useAxiosHooks = (initialValue) => {
   const [error, setError] = useState("");
 
   const createApiRequest = useCallback(
-    async ({ method, apiUrl, cb, payload }) => {
+    async ({ method, apiUrl, cb, payload, errCb }) => {
       setLoading(true);
       const api = `/data/2.5${apiUrl}&appid=${config.accessKey}`;
       try {
@@ -17,8 +17,11 @@ const useAxiosHooks = (initialValue) => {
         setResponse(res?.data);
         cb?.(res?.data);
       } catch (err) {
-        console.error({ err });
-        setError(err.response ? err.response.data : err.message);
+        console.log(err?.response?.data);
+        setError(
+          err?.response?.data ? err?.response?.data?.message : "Not Found"
+        );
+        errCb?.(err?.response?.data);
       } finally {
         setLoading(false);
       }
