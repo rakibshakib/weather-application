@@ -8,7 +8,7 @@ const WeatherConditions = ({ currentWeather }) => {
   // console.log("WeatherConditions component rendering....");
   return (
     <div className="h-full">
-      <div className="px-8 border flex md:flex-col lg:flex-col xl:flex-col flex-row justify-around items-start py-3 h-full">
+      <div className="px-8 border rounded flex md:flex-col lg:flex-col xl:flex-col flex-row justify-around items-start py-3 h-full">
         <div className="flex items-center border-b-2 pb-3 w-full md:h-full h-[100px]">
           <figure className="w-[30px]">
             <img className="w-full" src={humidityIcon} alt="" />
@@ -40,7 +40,7 @@ const WeatherConditions = ({ currentWeather }) => {
             </p>
           </div>
         </div>
-        <div className="flex items-center border-b-2 pb-3 w-full md:h-full h-[100px]">
+        <div className="flex items-center pb-3 w-full md:h-full h-[100px]">
           <figure className="w-[30px]">
             <img className="w-full" src={sunset} alt="" />
           </figure>

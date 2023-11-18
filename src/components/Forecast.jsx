@@ -29,7 +29,7 @@ const Forecast = ({ cityName }) => {
 
   // console.log("Forecast component rendering.. ");
   return (
-    <div className="border rounded px-3 py-2 w-full border-red-700">
+    <div className="border rounded px-3 py-2 w-full">
       {isLoadingForeCast ? (
         <Loading />
       ) : (
