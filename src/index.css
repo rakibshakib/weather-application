@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap");
-
+body {
+  background-image: linear-gradient(to right, #8360c3, #2ebf91);
+}
 .App {
   display: flex;
   justify-content: center;

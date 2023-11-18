@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
-import useAxiosHooks from "../hooks/useAxiosHooks";
-import { config } from "../config";
-import { getTimeFromUnixTime } from "../utills";
+import React from "react";
+import { getFullDay, getTimeFromUnixTime } from "../utills";
 
 const CurrentCityWeather = ({ propsObj }) => {
   const { currentWeather } = propsObj || {};
-  console.log({ currentWeather });
   return (
     <div
       className="border rounded-md h-[200px] p-3 mt-5 text-white"
@@ -14,25 +11,25 @@ const CurrentCityWeather = ({ propsObj }) => {
       }}
     >
       <div className="flex justify-between items-center">
-        <div className="text-3xl font-semibold">
-          <p>
-          <img src={`http://openweathermap.org/img/w/${currentWeather?.weather?.[0]?.icon}.png`} alt="openweathermap" />
-
+        <div className="flex font-semibold mt-1">
+          <p className="bg-white w-[100px] rounded-lg">
+            <img
+              src={`http://openweathermap.org/img/w/${currentWeather?.weather?.[0]?.icon}.png`}
+              alt="openweathermap"
+              className="w-full"
+            />
           </p>
-          <p>
-            {Math.round(currentWeather?.main?.temp)}
-            <span>&#176; C</span>
-          </p>
-          {/* <p>
-         
-            humidity: {currentWeather?.main?.humidity} %
-          </p>
-          <p>wind speed: {Math.round(currentWeather?.wind?.speed || 1) * 3.6} km/h</p> */}
-          <p> {currentWeather?.name}</p>
+          <div className="ml-4">
+            <p className="text-5xl">
+              <span>{Math.round(currentWeather?.main?.temp)}</span>
+              <span>&#176; C</span>
+            </p>
+            <p className="text-xl mt-3">{currentWeather?.name}</p>
+          </div>
         </div>
-        <div>
-          <p> {getTimeFromUnixTime(currentWeather?.sys?.sunset)}</p>
-          <p>Sunset Time, Friday</p>
+        <div className="text-end">
+          <p className="text-xl">{getTimeFromUnixTime(currentWeather?.sys?.sunset)}</p>
+          <p>Sunset Time, {getFullDay(currentWeather?.sys?.sunset)?.dayName}</p>
         </div>
       </div>
     </div>

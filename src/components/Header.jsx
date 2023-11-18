@@ -4,7 +4,7 @@ const Header = ({ propsObj }) => {
   const { cityName, setCityName, SearchWeather } = propsObj;
   return (
     <div className="flex justify-center md:justify-between md:flex-row lg:flex-row flex-col items-center">
-      <p className="text-2xl font-bold text-purple-600">Weather'R</p>
+      <p className="text-2xl font-extrabold text-purple-600">Weather'R</p>
       <form
         onSubmit={SearchWeather}
         className="flex justify-between items-center border rounded-md"
